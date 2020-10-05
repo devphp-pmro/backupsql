@@ -3,7 +3,7 @@
 namespace Source;
 use Phelium\Component\MySQLBackup;
 
-require_once __DIR__."/../ext_lib/autoload.php";
+require_once __DIR__."/bd.php";
 
 
 class BackupSql
