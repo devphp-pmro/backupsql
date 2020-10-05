@@ -1,0 +1,28 @@
+{
+  "name": "devphp-pmro/backupsql",
+  "description": "backup your tables in mysql in an easy and simplified way",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Leonardo Magalhães",
+      "email": "devphp.pmro@gmail.com"
+    }
+  ],
+  "config": {
+    "vendor-dir": "ext_lib"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/bd.php"
+    ]
+  },
+  "require": {
+    "phelium/mysql-backup": "1.0.0"
+  }
+}
+
+
