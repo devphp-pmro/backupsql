@@ -17,23 +17,21 @@ class BackupSql
 
     }
 
-    public function createSelectTables($tables,$fileName,$compress)
+    public function createSelectTables($tables,$fileName)
     {
         $this->tables = array();
         $this->backup->addTables($tables);
         $this->backup->setFilename($fileName);
         $this->backup->setDownload(true);
-        $this->backup->setCompress($compress);
         $this->backup->dump();
 
     }
 
-    public function createAllTables($fileName,$compress)
+    public function createAllTables($fileName)
     {
         $this->backup->addAllTables();
         $this->backup->setFilename($fileName);
         $this->backup->setDownload(true);
-        $this->backup->setCompress($compress);
         $this->backup->dump();
     }
 
