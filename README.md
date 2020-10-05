@@ -15,7 +15,7 @@ To use the library, simply require the composer to autoload, invoke the class an
 <? php
 //define the connection settings to the database for backup
 
-file bd.ph
+file bd.php
 
 define("CONFIG",["host" => "host,
                 "user" => "user",
