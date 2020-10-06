@@ -22,6 +22,7 @@ class BackupSql
 
     public function createSelectTables($tables)
     {
+
         $this->tables = array();
         $this->backup->addTables($tables);
         $this->backup->dump();
@@ -33,7 +34,7 @@ class BackupSql
         $this->backup->addAllTables();
         $this->backup->dump();
     }
-    
+
 
     public function __set($name, $value)
     {
