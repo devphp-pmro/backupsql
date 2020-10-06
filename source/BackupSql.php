@@ -11,30 +11,29 @@ class BackupSql
     private $backup = \stdClass::class;
     private $tables;
 
-    function __construct()
+    function __construct($fileName,$compress = null,$download = null)
     {
         $this->backup = new MySQLBackup(CONFIG['host'], CONFIG['user'], CONFIG['password'], CONFIG['data_base'], CONFIG['port']);
-
+        $this->backup->setCompress($compress);
+        $this->backup->setDownload($download);
+        $this->backup->setFilename($fileName);
 
     }
 
-    public function createSelectTables($tables,$fileName)
+    public function createSelectTables($tables)
     {
         $this->tables = array();
         $this->backup->addTables($tables);
-        $this->backup->setFilename($fileName);
-        $this->backup->setDownload(true);
         $this->backup->dump();
 
     }
 
-    public function createAllTables($fileName)
+    public function createAllTables()
     {
         $this->backup->addAllTables();
-        $this->backup->setFilename($fileName);
-        $this->backup->setDownload(true);
         $this->backup->dump();
     }
+    
 
     public function __set($name, $value)
     {

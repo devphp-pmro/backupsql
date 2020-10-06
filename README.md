@@ -18,15 +18,15 @@ open the bd.php file in the source folder and enter the credentials for connecti
 
 //define the connection settings to the database for backup
 
-file bd.php
-
 define("CONFIG",["host" => "host,
                 "user" => "user",
                 "password" => "password",
                 "data_base" => "data_base",
                 "port"=> "port"]);
 
+default port 3306
 
+// compress or download in method contruct is optional
 
 require __DIR__. '/vendor-dir/autoload.php';
 
@@ -34,23 +34,21 @@ use Source\BackupSql;
 
 $bk = new BackupSql(); // new instance
 
-$fileName = 'backup'.date('d-m-Y'); //define a file name
+$fileName = 'backup'.date('Y-m-d'); //the file name in the building method is mandatory
 
-$bk->createSelectTables(["table_name","table_name1"],$fileName,"zip"); //insert the table numbers to be backed up
-
-// compress = zip | gz | gzip
+$bk->createSelectTables(["table_name","table_name1"],$fileName,"zip",true or false); //insert the table numbers to be backed up
 
 $bk = new BackupSql(); // new instance
 
-$fileName = 'backup'.date('d-m-Y'); //define a file name
+$bk->createAllTables($fileName,"zip",true or false); //all tables
 
-$bk->createAllTables($fileName,"zip"); //insert the table numbers to be backed up
+// compress = zip | gz | gzip (optional)
 
-// compress = zip | gz | gzip
+// if false it will not be possible to download the created file.
+
+// if true it will be possible to download the file
 
 ```
-
-Note that the entire configuration of sending the email is using the magic method builder! Once the builder method has been invoked within your application, your system will be able to take the shots.
 
 ### Developers
 * [Leonardo] - Developer of this library!

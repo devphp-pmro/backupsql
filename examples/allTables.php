@@ -4,6 +4,7 @@ use Source\BackupSql;
 
 require_once __DIR__."/../ext_lib/autoload.php";
 
-$bk = new BackupSql(); // new instance
-$fileName = 'backup'.date('d-m-Y'); //define a file name
-$bk->createAllTables($fileName); //insert the table numbers to be backed up
+$fileName = 'backup'.date('Y-m-d'); //define a file name
+$bk = new BackupSql($fileName); // new instance
+
+$bk->createAllTables(); //insert the table numbers to be backed up
