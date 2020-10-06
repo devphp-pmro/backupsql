@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a3aa033bcf2b73c4ee6981b2aa9e413",
+    "content-hash": "04729beb0a8b02d3645cb1555707a6af",
     "packages": [
         {
             "name": "phelium/mysql-backup",
@@ -56,7 +56,7 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
