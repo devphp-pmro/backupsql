@@ -13,6 +13,9 @@ To use the library, simply require the composer to autoload, invoke the class an
 ``` sh
 
 <? php
+
+open the bd.php file in the source folder and enter the credentials for connecting to the database
+
 //define the connection settings to the database for backup
 
 file bd.php
@@ -25,7 +28,7 @@ define("CONFIG",["host" => "host,
 
 
 
-require __DIR__. '/ext_lib/autoload.php';
+require __DIR__. '/vendor-dir/autoload.php';
 
 use Source\BackupSql;
 
