@@ -32,15 +32,15 @@ require __DIR__. '/vendor-dir/autoload.php';
 
 use Source\BackupSql;
 
-$bk = new BackupSql(); // new instance
+$bk = new BackupSql($fileName, true, "zip",true); // new instance
 
 $fileName = 'backup'.date('Y-m-d'); //the file name in the building method is mandatory
 
 $bk->createSelectTables(["table_name","table_name1"]); //insert the table numbers to be backed up
 
-$bk = new BackupSql(); // new instance
+$bk = new BackupSql($fileName, true, "zip",true); // new instance
 
-$bk->createAllTables($fileName,"zip",true or false); //all tables
+$bk->createAllTables(); //all tables
 
 // compress = zip | gz | gzip (optional)
 
