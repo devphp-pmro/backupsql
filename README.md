@@ -36,7 +36,7 @@ $bk = new BackupSql(); // new instance
 
 $fileName = 'backup'.date('Y-m-d'); //the file name in the building method is mandatory
 
-$bk->createSelectTables(["table_name","table_name1"],$fileName,"zip",true or false); //insert the table numbers to be backed up
+$bk->createSelectTables(["table_name","table_name1"]); //insert the table numbers to be backed up
 
 $bk = new BackupSql(); // new instance
 
@@ -44,9 +44,9 @@ $bk->createAllTables($fileName,"zip",true or false); //all tables
 
 // compress = zip | gz | gzip (optional)
 
-// if false it will not be possible to download the created file.
+// download true or false
 
-// if true it will be possible to download the file
+if deleteFile is false the file will be saved in the folder where the class was instantiated, so if you want the file not to be automatically saved, put deleteFile true and download as true
 
 ```
 

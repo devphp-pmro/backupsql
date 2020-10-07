@@ -10,14 +10,22 @@ class BackupSql
 {
     private $backup = \stdClass::class;
     private $tables;
-
-    function __construct($fileName,$compress = null,$download = null)
+    
+    
+    /**
+     * BackupSql constructor.
+     * @param      $fileName
+     * @param      $download
+     * @param null $compress zip | gz | gzip (optional)
+     * @param null $deleteFile
+     */
+    function __construct($fileName,$download = null,$compress = null,$deleteFile = null)
     {
         $this->backup = new MySQLBackup(CONFIG['host'], CONFIG['user'], CONFIG['password'], CONFIG['data_base'], CONFIG['port']);
         $this->backup->setCompress($compress);
         $this->backup->setDownload($download);
         $this->backup->setFilename($fileName);
-
+        $this->backup->setDelete($deleteFile);
     }
 
     public function createSelectTables($tables)
@@ -43,6 +51,7 @@ class BackupSql
     }
     public function __get($name)
     {
+        return $this->$name;
         // TODO: Implement __get() method.
     }
 }
